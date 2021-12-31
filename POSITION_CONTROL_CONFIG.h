@@ -8,4 +8,6 @@ void ISR_magneticEncoderCountA();
 
 void ISR_magneticEncoderCountB();
 
+
+
 #endif
