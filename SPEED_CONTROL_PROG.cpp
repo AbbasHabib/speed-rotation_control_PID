@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "STD_TYPES.h"
 #include "SPEED_CONTROL_CONFIG.h"
-#include "SPEED_CONTOL_INTERFACE.h" 
+#include "SPEED_CONTROL_INTERFACE.h" 
 
 void progInit(){
   pinMode(motor_out_pin_left, OUTPUT);

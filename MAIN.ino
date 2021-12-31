@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "STD_TYPES.h" // UTIL
-#include "SPEED_CONTOL_INTERFACE.h" // HAL
+#include "SPEED_CONTROL_INTERFACE.h" // HAL
 
 
 uint8 MOTOR_PWM_DUTY_CYCLE = 100;
