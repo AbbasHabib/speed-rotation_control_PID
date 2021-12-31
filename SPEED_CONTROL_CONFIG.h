@@ -1,12 +1,10 @@
-#ifndef SPEED_CONTROL_CONFIG
-#define SPEED_CONTROL_CONFIG
+#ifndef SPEED_CONTROL_CONFIG_H
+#define SPEED_CONTROL_CONFIG_H
 
-#define motor_out_pin_left      11
-#define motor_out_pin_right     10
-#define motor_enable_pin        13
-#define speed_analog_pin        A0
-
-
+#define MOTOR_OUT_PIN_LEFT      11
+#define MOTOR_OUT_PIN_RIGHT     10
+#define MOTOR_ENABLE_PIN        13
+#define SPEED_ANALOG_PIN        A0
 
 
 #endif

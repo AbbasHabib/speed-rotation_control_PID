@@ -3,19 +3,15 @@
 #include "SPEED_CONTROL_INTERFACE.h" // HAL
 
 
-uint8 MOTOR_PWM_DUTY_CYCLE = 100;
+uint8 g_motorPwmDutyCycle = 100;
 
 void setup() {
   Serial.begin(9600);
-  progInit();
+  motorSpeedControlInit();
+  
 }
 
 void loop() {
-  MOTOR_PWM_DUTY_CYCLE = getDutyCycleFromPot();
-  Serial.print(MOTOR_PWM_DUTY_CYCLE);
-  
-  motorGo(MOTOR_PWM_DUTY_CYCLE, 'R');
-  delay(1000);
-  motorGo(MOTOR_PWM_DUTY_CYCLE, 'L');
-  delay(1000);
+  g_motor_pwm_duty_cycle = getDutyCycleFromPot();
+  Serial.print(g_motorPwmDutyCycle);
 }

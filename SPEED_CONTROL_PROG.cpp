@@ -3,14 +3,14 @@
 #include "SPEED_CONTROL_CONFIG.h"
 #include "SPEED_CONTROL_INTERFACE.h" 
 
-void progInit(){
-  pinMode(motor_out_pin_left, OUTPUT);
-  pinMode(motor_out_pin_right, OUTPUT);
-  pinMode(motor_enable_pin, OUTPUT);
+void motorSpeedControlInit(){
+  pinMode(MOTOR_OUT_PIN_LEFT, OUTPUT);
+  pinMode(MOTOR_OUT_PIN_RIGHT, OUTPUT);
+  pinMode(MOTOR_ENABLE_PIN, OUTPUT);
   
-  digitalWrite(motor_out_pin_left, LOW);
-  digitalWrite(motor_out_pin_right, LOW);
-  digitalWrite(motor_enable_pin, HIGH);
+  digitalWrite(MOTOR_OUT_PIN_LEFT, LOW);
+  digitalWrite(MOTOR_OUT_PIN_RIGHT, LOW);
+  digitalWrite(MOTOR_ENABLE_PIN, HIGH);
 }
 
 
@@ -21,18 +21,18 @@ void motorGo(uint8 pwm_duty_cycle, uint8 motor_direction){
   
   switch (motor_direction){
      case 'L':
-              digitalWrite(motor_out_pin_right, LOW);
-              analogWrite (motor_out_pin_left, actpwm) ;
+              digitalWrite(MOTOR_OUT_PIN_RIGHT, LOW);
+              analogWrite (MOTOR_OUT_PIN_LEFT, actpwm) ;
               break;
      case 'R':
-              digitalWrite(motor_out_pin_left, LOW);
-              analogWrite (motor_out_pin_right, actpwm);
+              digitalWrite(MOTOR_OUT_PIN_LEFT, LOW);
+              analogWrite (MOTOR_OUT_PIN_RIGHT, actpwm);
               break;
   }    
 }
 
 uint16 getDutyCycleFromPot(){
-  uint16 potVal = analogRead(speed_analog_pin); // returns values from 0 to 1023
+  uint16 potVal = analogRead(SPEED_ANALOG_PIN); // returns values from 0 to 1023
 
   return (potVal/(float)1023.0) * 100; // return duty cycle out of 10
 }
